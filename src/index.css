@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-brand-ink font-sans antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer components {
+  .wrap {
+    @apply mx-auto w-full max-w-wrap px-5 sm:px-8;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-200;
+  }
+  .btn-blue {
+    @apply btn bg-brand-blue text-white hover:bg-[#0076b0] hover:shadow-soft;
+  }
+  .btn-green {
+    @apply btn bg-brand-green text-brand-ink hover:bg-[#95bb2c];
+  }
+  .btn-outline {
+    @apply btn border border-white/70 text-white hover:bg-white hover:text-brand-blue;
+  }
+  .eyebrow {
+    @apply inline-block text-xs font-bold uppercase tracking-[0.18em] text-brand-blue;
+  }
+}
