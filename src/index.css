@@ -35,4 +35,50 @@
   .eyebrow {
     @apply inline-block text-xs font-bold uppercase tracking-[0.18em] text-brand-blue;
   }
+  /* Shine sweep on hover — wrap target in this, add overflow-hidden + relative */
+  .btn::after {
+    content: "";
+    @apply pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12;
+  }
+  .btn {
+    @apply relative overflow-hidden;
+  }
+  .btn:hover::after {
+    @apply translate-x-full transition-transform duration-700 ease-out;
+  }
+  .card-hover {
+    @apply transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-[0_24px_60px_-18px_rgba(11,58,82,0.35)];
+  }
+}
+
+@layer utilities {
+  /* Scroll-reveal: starts hidden, .is-visible plays it in */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+  .delay-0 { animation-delay: 0ms; transition-delay: 0ms; }
+  .delay-75 { animation-delay: 75ms; transition-delay: 75ms; }
+  .delay-150 { animation-delay: 150ms; transition-delay: 150ms; }
+  .delay-300 { animation-delay: 300ms; transition-delay: 300ms; }
+  .delay-500 { animation-delay: 500ms; transition-delay: 500ms; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }

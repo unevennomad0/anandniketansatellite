@@ -1,7 +1,6 @@
 import logo from "../assets/logo.png";
 import logoInner from "../assets/logo-inner.png";
 import footerLogo from "../assets/footer-logo.png";
-import childPic from "../assets/child-pic.png";
 import banner01 from "../assets/activity-banner01.jpg";
 import banner02 from "../assets/activity-banner02.jpg";
 import banner03 from "../assets/activity-banner03.jpg";
@@ -31,7 +30,6 @@ export const img = {
   logo,
   logoInner,
   footerLogo,
-  childPic,
   banners: [banner01, banner02, banner03, banner04],
   resultIsc,
   resultIcse,
@@ -76,5 +74,4 @@ export const galleryImages: { src: string; alt: string }[] = [
   { src: fClassrooms, alt: "Spacious classrooms" },
   { src: banner04, alt: "Co-curricular activity" },
   { src: fTransport, alt: "School transport fleet" },
-  { src: childPic, alt: "A happy young learner" },
 ];
